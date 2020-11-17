@@ -16,10 +16,10 @@ jobs:
       - name: Merge master
         uses: exions/merge-upstream@v1
         with:
-          upstream: ytdl-org/youtube-dl   # set the upstream repo
-          upstream-branch: master         # set the upstream branch to merge from
-          branch: master                  # set the branch to merge to
-          token: c2e374165809ce1d5556ee35f3360e0d456cd192
+          upstream: ${{ github.event.inputs.upstream }}
+          upstream-branch: ${{ github.event.inputs.upstream-branch }}
+          branch: ${{ github.event.inputs.branch }}
+          token: ${{ secrets.TOKEN }}
 
   merge-gh-pages:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
       - name: Merge gh-pages
         uses: exions/merge-upstream@v1
         with:
-          upstream: ytdl-org/youtube-dl   # set the upstream repo
-          upstream-branch: gh-pages       # set the upstream branch to merge from
-          branch: gh-pages                # set the branch to merge to
-          token: c2e374165809ce1d5556ee35f3360e0d456cd192
+          upstream: ${{ github.event.inputs.upstream }}
+          upstream-branch: ${{ github.event.inputs.upstream-branch }}
+          branch: ${{ github.event.inputs.branch }}
+          token: ${{ secrets.TOKEN }}

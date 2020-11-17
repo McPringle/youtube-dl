@@ -2,7 +2,7 @@ name: Merge from Upstream
 
 on: 
   schedule:
-    - cron: "45 10 * * *"
+    - cron: "0 1 * * *"
 jobs:
   build:
 
